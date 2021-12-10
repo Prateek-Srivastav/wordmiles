@@ -40,98 +40,113 @@ const AuthScreen = (props) => {
 
   return (
     <View style={styles.screen}>
-      <KeyboardAvoidingView
-        style={{
-          flex: 1,
-          // alignItems: "center",
-        }}
-        behavior="padding"
-        keyboardVerticalOffset={-10}
-      >
-        <View style={styles.titleContainer}>
-          <Image
-            style={styles.logo}
-            source={require("../assets/logo-white.png")}
+      <View style={styles.titleContainer}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/logo-white.png")}
+        />
+        <Text style={styles.titleText}>Word Miles</Text>
+      </View>
+      <View style={styles.carouselTitleContainer}>
+        <Text style={styles.carouselTitle}> A Social platform for</Text>
+      </View>
+      <View style={styles.carouselContainer} onLayout={onLayout}>
+        <Carousel data={carouselData} viewHeight={viewHeight} />
+      </View>
+      <View style={styles.authContainer}>
+        <View
+          style={{
+            flex: 1,
+            position: "absolute",
+            marginTop: 50,
+            left: 150,
+            // alignItems: "center",
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 20 }}>
+            Not a member yet?
+          </Text>
+          <TouchableOpacity>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "flex-end",
+              }}
+            >
+              <Text
+                style={{ color: "white", fontWeight: "bold", fontSize: 20 }}
+              >
+                Create Account
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.loginContainer}>
+          <Input
+            id="userId"
+            label="User ID"
+            selectionColor="#ccc"
+            placeholder="User ID"
+            placeholderTextColor="#ccc"
+            returnKeyType="next"
           />
-          <Text style={styles.titleText}>Word Miles</Text>
-        </View>
-        <View style={styles.carouselTitleContainer}>
-          <Text style={styles.carouselTitle}> A Social platform for</Text>
-        </View>
-        <View style={styles.carouselContainer} onLayout={onLayout}>
-          <Carousel data={carouselData} viewHeight={viewHeight} />
-        </View>
-        <View style={styles.authContainer}>
-          <View
-            style={{
-              flex: 1,
-              position: "absolute",
-              marginTop: 50,
-              left: 150,
-              // alignItems: "center",
-            }}
-          >
-            <Text style={{ color: "white", fontSize: 20 }}>
-              Not a member yet?
-            </Text>
+
+          <Input
+            id="password"
+            label="Password"
+            selectionColor="#ccc"
+            placeholder="Password"
+            placeholderTextColor="#ccc"
+            secureTextEntry={true}
+          />
+          <View style={{ marginTop: 10 }}>
             <TouchableOpacity>
               <View
                 style={{
                   justifyContent: "center",
                   alignItems: "flex-end",
+                  marginTop: 8,
                 }}
               >
-                <Text
-                  style={{ color: "white", fontWeight: "bold", fontSize: 20 }}
-                >
-                  Create Account
-                </Text>
+                <Text style={{ color: "white" }}>Forgot Password?</Text>
               </View>
             </TouchableOpacity>
-          </View>
-          <View style={styles.loginContainer}>
-            <Input
-              id="userId"
-              label="User ID"
-              selectionColor="#ccc"
-              placeholder="User ID"
-              placeholderTextColor="#ccc"
-            />
-
-            <Input
-              id="password"
-              label="Password"
-              selectionColor="#ccc"
-              placeholder="Password"
-              placeholderTextColor="#ccc"
-            />
-            <View style={{ marginTop: 10 }}>
-              <TouchableOpacity>
-                <View
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "flex-end",
-                    marginTop: 8,
-                  }}
-                >
-                  <Text style={{ color: "white" }}>Forgot Password?</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                style={{
+                  flex: 1,
+                  // justifyContent: "center",
+                  // alignItems: "center",
+                  // borderWidth: 2,
+                  // borderColor: "blue",
+                  width: 100,
+                }}
+              >
                 <View
                   style={{
                     justifyContent: "center",
                     alignItems: "center",
                     marginTop: 15,
+                    // borderWidth: 2,
+                    // borderColor: "blue",
                   }}
                 >
-                  <Text style={{ color: "white", fontSize: 15 }}>LOGIN</Text>
+                  <Text
+                    style={{ color: "white", fontSize: 15, fontWeight: "bold" }}
+                  >
+                    LOGIN
+                  </Text>
                 </View>
               </TouchableOpacity>
             </View>
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </View>
     </View>
   );
 };
@@ -174,14 +189,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 12,
     justifyContent: "center",
     alignItems: "flex-start",
-    position: "relative",
     // marginTop: 5,
     top: Dimensions.get("window").height / 7.5,
     // left: Dimensions.get("window").width / 9.5,
   },
   authContainer: {
     // flex: 1,
-    borderColor: "blue",
+    // borderColor: "blue",
     position: "absolute",
     bottom: -150,
     left: 30,

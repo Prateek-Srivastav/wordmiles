@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     // marginBottom: 5,
     // left: Dimensions.get("window").width / 8,
     // marginStart: 15,
-    // fontWeight: "bold",
+    fontWeight: "bold",
     // elevation: 5,
   },
 });

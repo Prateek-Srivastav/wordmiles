@@ -59,9 +59,10 @@ const Carousel = ({ data, viewHeight }) => {
           renderItem={({ item }) => {
             return <CarouselItem item={item} />;
           }}
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { y: scrollY } } },
-          ])}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+            { useNativeDriver: false }
+          )}
         />
       </View>
     );

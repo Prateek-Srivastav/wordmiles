@@ -5,12 +5,17 @@ import { enableScreens } from "react-native-screens";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import AuthScreen from "./screens/AuthScreen";
+import HomeScreen from "./screens/HomeScreen";
 
 enableScreens();
 
 const fetchFonts = () => {
   return Font.loadAsync({
     "dynalight-regular": require("./assets/fonts/dynalight.regular.ttf"),
+    // "OpenSans-VariableFont_wdth,wght": require("./assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"),
+    "OpenSans-Medium": require("./assets/fonts/OpenSans-Medium.ttf"),
+    "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "OpenSans-SemiBold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
   });
 };
 
@@ -27,5 +32,5 @@ export default function App() {
     );
   }
 
-  return <AuthScreen />;
+  return <HomeScreen />;
 }

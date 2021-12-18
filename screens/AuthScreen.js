@@ -14,6 +14,7 @@ import {
 import { Dimensions } from "react-native";
 import Input from "../components/Input";
 import Carousel from "../components/Carousel";
+import Colors from "../constants/Colors";
 
 const carouselData = [
   {
@@ -154,7 +155,7 @@ const AuthScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: Colors.black,
   },
   logo: {
     width: Dimensions.get("window").width / 3,
